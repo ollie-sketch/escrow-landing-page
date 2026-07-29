@@ -4,30 +4,28 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Core industrial palette — named tokens, used consistently across both pages
-        base: '#17181A',       // primary background — warm near-black, not pure black
-        panel: '#212326',      // raised surface (cards, nav)
-        panel2: '#2A2D31',     // secondary raised surface (hover/active states)
-        line: '#3A3E42',       // hairline borders, dividers, rivets
-        steel: '#5B7A8C',      // muted steel-blue secondary accent
-        amber: '#E8A33D',      // primary accent — CTAs, active states
-        signal: '#F2C230',     // safety-yellow — sparing use, live/attention moments
-        rust: '#B4543D',       // muted rust-red — used only for "direct payment" risk column
-        moss: '#7FA37A',       // muted industrial green — escrow-safe / success indicators
-        ink: '#ECE9E2',        // primary text — concrete off-white
-        mute: '#9BA1A6',       // secondary/muted text
+        // Dockyard-at-dusk palette — grounded in a real material world (weathered shipping
+        // containers, oxidized steel, aged signage) rather than an abstract dark-UI theme.
+        base: '#1D2926',       // deep weathered container green-black
+        panel: '#242F2C',      // raised surface — slightly lighter container-paint tone
+        panel2: '#2D3A36',     // secondary raised surface (hover/active states)
+        line: '#3E4C46',       // hairline borders — worn container seam
+        steel: '#6E8683',      // galvanized steel grey-green — secondary accent
+        amber: '#BF5730',      // burnt rust-orange — primary accent, oxidized steel corners
+        signal: '#C99A3E',     // aged brass-gold — sparing use, live/attention moments
+        rust: '#8C4A3D',       // muted brick-red — risk indicators only, distinct from the accent
+        moss: '#7C8F4E',       // faded stencil olive-green — escrow-safe / cleared indicators
+        ink: '#EDE6D3',        // primary text — warm parchment, not stark white
+        mute: '#9BAA9E',       // secondary/muted text — weathered sage-grey
       },
       fontFamily: {
         display: ['"Oswald"', 'sans-serif'],
         body: ['"Inter"', 'sans-serif'],
-        mono: ['"IBM Plex Mono"', 'monospace'],
+        mono: ['"Courier Prime"', 'monospace'], // typewriter/ledger feel — customs paperwork, not a generic dev-mono
       },
       backgroundImage: {
-        'grid-lines':
-          'linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px)',
-      },
-      backgroundSize: {
-        grid: '40px 40px',
+        crate:
+          'repeating-linear-gradient(135deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 2px, transparent 2px, transparent 14px)',
       },
       keyframes: {
         'crate-move': {

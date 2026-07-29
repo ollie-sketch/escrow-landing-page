@@ -21,7 +21,7 @@ export default function Hero({ variant = 'buyer' }) {
   const c = content[variant];
 
   return (
-    <section className="relative overflow-hidden border-b border-line bg-grid-lines bg-grid">
+    <section className="relative overflow-hidden border-b border-line bg-base bg-crate">
       <div className="absolute inset-0 bg-gradient-to-b from-base/0 via-base/40 to-base pointer-events-none" />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
         <div>
@@ -56,42 +56,70 @@ export default function Hero({ variant = 'buyer' }) {
           </div>
         </div>
 
-        {/* Riveted "shipment plate" visual — signature motif, reused as a static panel here */}
+        {/* Waybill / cargo-tag visual — the page's signature element, echoed later in the escrow tracker */}
         <div className="relative hidden items-center justify-center md:flex">
-          <div className="relative w-full max-w-sm border-2 border-line bg-panel p-8">
-            {['tl', 'tr', 'bl', 'br'].map((pos) => (
-              <span
-                key={pos}
-                aria-hidden="true"
-                className={`absolute h-2.5 w-2.5 rounded-full bg-line ${
-                  pos === 'tl'
-                    ? 'left-3 top-3'
-                    : pos === 'tr'
-                    ? 'right-3 top-3'
-                    : pos === 'bl'
-                    ? 'bottom-3 left-3'
-                    : 'bottom-3 right-3'
-                }`}
-              />
-            ))}
-            <p className="plate-label text-steel">Order manifest</p>
+          <div className="relative w-full max-w-sm bg-panel bg-crate p-8 shadow-[0_0_0_2px_theme(colors.line)]">
+            {/* Perforated tear-line along the top, like a detachable shipping tag */}
+            <div
+              aria-hidden="true"
+              className="absolute -top-[7px] left-6 right-6 flex justify-between"
+            >
+              {Array.from({ length: 14 }).map((_, i) => (
+                <span key={i} className="h-3.5 w-3.5 rounded-full bg-base" />
+              ))}
+            </div>
+            {/* Clipped corner, like a printed shipping label */}
+            <div
+              aria-hidden="true"
+              className="absolute right-0 top-0 h-0 w-0 border-b-[22px] border-l-[22px] border-b-transparent border-l-base"
+            />
+
+            <div className="flex items-start justify-between">
+              <p className="plate-label text-steel">Waybill &middot; No. HF-48291</p>
+            </div>
+
             <div className="mt-6 space-y-4 font-mono text-sm">
-              <div className="flex justify-between border-b border-line pb-3">
+              <div className="flex justify-between border-b border-dashed border-line pb-3">
                 <span className="text-mute">Item</span>
                 <span className="text-ink">Canvas field bag</span>
               </div>
-              <div className="flex justify-between border-b border-line pb-3">
+              <div className="flex justify-between border-b border-dashed border-line pb-3">
                 <span className="text-mute">Amount held</span>
                 <span className="text-signal">$128.00</span>
               </div>
-              <div className="flex justify-between border-b border-line pb-3">
-                <span className="text-mute">Status</span>
-                <span className="text-moss">In escrow</span>
+              <div className="flex justify-between border-b border-dashed border-line pb-3">
+                <span className="text-mute">Route</span>
+                <span className="text-ink">Vendor &rarr; Escrow &rarr; Buyer</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-mute">Release on</span>
                 <span className="text-ink">Delivery confirmed</span>
               </div>
+            </div>
+
+            {/* Barcode flourish */}
+            <div
+              aria-hidden="true"
+              className="mt-6 flex h-6 items-end gap-[2px] opacity-60"
+            >
+              {[3, 1, 2, 4, 1, 3, 2, 1, 4, 2, 1, 3, 2, 4, 1, 2, 3, 1, 2, 4, 1, 3].map((w, i) => (
+                <span
+                  key={i}
+                  className="bg-mute"
+                  style={{ width: '2px', height: `${w * 4 + 4}px` }}
+                />
+              ))}
+            </div>
+
+            {/* Ink stamp — rotated, imperfect, the actual signature moment */}
+            <div
+              aria-hidden="true"
+              className="absolute -right-4 top-20 -rotate-[10deg] rounded-sm border-[3px] border-moss px-3 py-1.5 opacity-90"
+              style={{ boxShadow: 'inset 0 0 0 1.5px rgba(111,143,92,0.5)' }}
+            >
+              <span className="font-display text-sm font-bold uppercase tracking-widest text-moss">
+                Held in escrow
+              </span>
             </div>
           </div>
         </div>

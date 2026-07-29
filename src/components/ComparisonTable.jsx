@@ -83,7 +83,7 @@ export default function ComparisonTable() {
                 </th>
                 <th
                   scope="col"
-                  className="py-4 px-4 plate-label font-normal text-signal border-x border-signal/40 bg-signal/5"
+                  className="py-4 px-4 plate-label font-normal text-moss border-x border-moss/40 bg-moss/5"
                 >
                   Holdfast escrow
                 </th>
@@ -98,7 +98,7 @@ export default function ComparisonTable() {
                   <td className="py-4 px-4">
                     <Indicator value={row.direct} />
                   </td>
-                  <td className="py-4 px-4 border-x border-signal/40 bg-signal/5">
+                  <td className="py-4 px-4 border-x border-moss/40 bg-moss/5">
                     <Indicator value={row.escrow} />
                   </td>
                 </tr>
