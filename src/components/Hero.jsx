@@ -85,7 +85,7 @@ export default function Hero({ variant = 'buyer' }) {
               </div>
               <div className="flex justify-between border-b border-dashed border-line pb-3">
                 <span className="text-mute">Amount held</span>
-                <span className="text-signal">$128.00</span>
+                <span className="text-signal">N128.00</span>
               </div>
               <div className="flex justify-between border-b border-dashed border-line pb-3">
                 <span className="text-mute">Route</span>
