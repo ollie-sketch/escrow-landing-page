@@ -3,6 +3,36 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Light theme (default) — dockyard at midday: sunbleached container paint, aged paper */
+    --color-base: 237 230 211;     /* #EDE6D3 parchment */
+    --color-panel: 228 219 195;    /* #E4DBC3 */
+    --color-panel2: 218 207 178;   /* #DACFB2 */
+    --color-line: 184 172 142;     /* #B8AC8E warm tan hairline */
+    --color-steel: 79 99 96;       /* #4F6360 darker galvanized green, tuned for contrast */
+    --color-amber: 168 70 31;      /* #A8461F burnt rust-orange, deepened for legibility */
+    --color-signal: 140 106 31;    /* #8C6A1F aged brass-gold, deepened */
+    --color-rust: 122 59 48;       /* #7A3B30 brick-red, deepened */
+    --color-moss: 85 103 47;       /* #55672F olive, deepened */
+    --color-ink: 29 41 38;         /* #1D2926 dark container green-black — primary text */
+    --color-mute: 95 107 98;       /* #5F6B62 muted text */
+  }
+
+  html.dark {
+    /* Dark theme — the same dockyard at dusk */
+    --color-base: 29 41 38;        /* #1D2926 */
+    --color-panel: 36 47 44;       /* #242F2C */
+    --color-panel2: 45 58 54;      /* #2D3A36 */
+    --color-line: 62 76 70;        /* #3E4C46 */
+    --color-steel: 110 134 131;    /* #6E8683 */
+    --color-amber: 191 87 48;      /* #BF5730 */
+    --color-signal: 201 154 62;    /* #C99A3E */
+    --color-rust: 140 74 61;       /* #8C4A3D */
+    --color-moss: 124 143 78;      /* #7C8F4E */
+    --color-ink: 237 230 211;      /* #EDE6D3 */
+    --color-mute: 155 170 158;     /* #9BAA9E */
+  }
+
   html {
     scroll-behavior: smooth;
   }

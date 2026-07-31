@@ -1,22 +1,24 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        // Dockyard-at-dusk palette — grounded in a real material world (weathered shipping
-        // containers, oxidized steel, aged signage) rather than an abstract dark-UI theme.
-        base: '#1D2926',       // deep weathered container green-black
-        panel: '#242F2C',      // raised surface — slightly lighter container-paint tone
-        panel2: '#2D3A36',     // secondary raised surface (hover/active states)
-        line: '#3E4C46',       // hairline borders — worn container seam
-        steel: '#6E8683',      // galvanized steel grey-green — secondary accent
-        amber: '#BF5730',      // burnt rust-orange — primary accent, oxidized steel corners
-        signal: '#C99A3E',     // aged brass-gold — sparing use, live/attention moments
-        rust: '#8C4A3D',       // muted brick-red — risk indicators only, distinct from the accent
-        moss: '#7C8F4E',       // faded stencil olive-green — escrow-safe / cleared indicators
-        ink: '#EDE6D3',        // primary text — warm parchment, not stark white
-        mute: '#9BAA9E',       // secondary/muted text — weathered sage-grey
+        // Dockyard palette — same real-world reference (weathered shipping containers,
+        // oxidized steel, aged signage) rendered as daytime (light, default) or dusk (dark).
+        // Values are CSS variables so both themes reuse the same class names everywhere.
+        base: 'rgb(var(--color-base) / <alpha-value>)',
+        panel: 'rgb(var(--color-panel) / <alpha-value>)',
+        panel2: 'rgb(var(--color-panel2) / <alpha-value>)',
+        line: 'rgb(var(--color-line) / <alpha-value>)',
+        steel: 'rgb(var(--color-steel) / <alpha-value>)',
+        amber: 'rgb(var(--color-amber) / <alpha-value>)',
+        signal: 'rgb(var(--color-signal) / <alpha-value>)',
+        rust: 'rgb(var(--color-rust) / <alpha-value>)',
+        moss: 'rgb(var(--color-moss) / <alpha-value>)',
+        ink: 'rgb(var(--color-ink) / <alpha-value>)',
+        mute: 'rgb(var(--color-mute) / <alpha-value>)',
       },
       fontFamily: {
         display: ['"Oswald"', 'sans-serif'],
